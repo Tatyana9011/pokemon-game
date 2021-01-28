@@ -1,15 +1,13 @@
 import s from'./style.module.css';
 
 
-const Layout = ({ hideBackground = false, title, descr, id, urlBg, colorBg }) => {
+const Layout = ({ hideBackground = false, title, descr, id }) => {
 
   const styleRoot = hideBackground ? { backgroundImage: "none" } : {};
     return (
     <>
         <section
-          style={
-          {background:`url(${urlBg})`, backgroundColor:colorBg, styleRoot}
-        }
+          style={ styleRoot}
           className={s.root}
           id={id}
       >
