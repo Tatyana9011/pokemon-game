@@ -1,13 +1,16 @@
 import s from'./style.module.css';
 
 
-const Layout = ({ hideBackground = false, title, descr, id }) => {
-
-  const styleRoot = hideBackground ? { backgroundImage: "none" } : {};
+const Layout = ({ title, id, urlBg, colorBg, children}) => {
+const Style = {};
+  if (urlBg) { Style.backgroundImage = `url(${urlBg})` }
+  if (colorBg) { Style.backgroundColor = {colorBg}}
+  
+  
     return (
     <>
         <section
-          style={ styleRoot}
+          style={Style}
           className={s.root}
           id={id}
       >
@@ -18,7 +21,7 @@ const Layout = ({ hideBackground = false, title, descr, id }) => {
                     <span className={s.separator}></span>
                   </div>
                   <div className={s.descFull} >
-                      <p>{descr}</p>
+                   {children}
                   </div>
               </article>
           </div>
