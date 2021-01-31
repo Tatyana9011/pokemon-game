@@ -9,7 +9,6 @@ const PokemonCard = ({ name, img, id, type, values }) => {
   const handleClick = () => {
     setActive(true);
   }
-
   return (
     <div className={s.root} onClick={handleClick} >
       <div className={`${s.pokemonCard} ${isActive ? s.active : ''}`}>

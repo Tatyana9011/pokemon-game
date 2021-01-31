@@ -158,8 +158,15 @@ const App = () => {
           <p> In the game two players face off against one another, one side playing as "blue", the other as "red" on a 3x3 grid.  </p>
           <div className={s.flex}>
               {
-            POKEMONS.map((item) => <PokemonCard key={item.id} {...item} />)
-              }
+            POKEMONS.map(item => <PokemonCard
+              name = {item.name}
+              img= {item.img}
+              id = {item.id}
+              type= {item.type}
+              values= {item.values}
+            />
+            )
+          }
           </div>
         </Layout>
         
